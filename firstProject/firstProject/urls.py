@@ -17,10 +17,8 @@ from . import views
 from django.contrib import admin
 from django.urls import path, include
 
-from firstProject import firstProject, project_app1
-
 urlpatterns = [
     path('home/', views.homepage),
     path('admin/', admin.site.urls),
-    path("", include(project_app1.urls))
+    path("", include("project_app1.urls"))
 ]
