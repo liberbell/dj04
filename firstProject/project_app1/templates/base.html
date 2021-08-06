@@ -35,9 +35,22 @@
             text-align: center;
             margin: 0px auto;
         }
+
+        nav a{
+            color: white;
+            text-decoration: none;
+            padding: 7px 25px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
-    
+    <div class="fixed-header">
+        <div class="container">
+            <nav>
+                <a href="{% url 'app_homepage' %}">Eric Basket</a>
+            </nav>
+        </div>
+    </div>
 </body>
 </html>
