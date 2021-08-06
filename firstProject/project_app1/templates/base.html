@@ -61,6 +61,13 @@
         <div class="row">
             {% if messages %}
                 {% for msg in messages%}
+                <div class="alert alert-{{ msg.tag }}">
+                    <p></p>
+                    {{ msg }}
+                    <p></p>
+                </div>
+                {% endfor %}
+            {% endif %}
         </div>
     </main>
 </body>
