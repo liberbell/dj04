@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+<style>
+    .container{
+        width: 200%;
+        margin: 100;
+        color: green;
+        display: inline-block;
+    }
+</style>
+<body>
+    {% block content %}
+    <p>Contact Number: +12 3456789012</p>
+    <p>Email id: exp@example.com</p>
+    <img src="/static/background.jpg" width="1050" height="700" style="text-align:center;">
+    {% endblock content %}
+</body>
