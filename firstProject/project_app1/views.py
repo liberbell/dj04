@@ -30,3 +30,6 @@ def register(request):
         form = RegisterForm()
         user_info = {'form': form}
         return render(request, "register.html", user_info)
+
+def signin(request):
+    return render(request, "signin.html")
