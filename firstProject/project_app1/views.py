@@ -24,3 +24,8 @@ def register(request):
             form.save()
             messages.success(request, "Account created successfully.")
             return redirect("signin")
+        
+        else:
+            form = RegisterForm()
+            user_info = {"form": form}
+            return redirect(request, "register.html", user_info)
