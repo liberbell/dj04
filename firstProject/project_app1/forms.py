@@ -9,3 +9,8 @@ class RegisterForm(ModelForm):
     class Meta:
         model = RegisteredUser
         fields = '__all__'
+        labels = {
+            "name": "Username",
+            "emailid": "Email Id",
+            "phoneNum": "Phone Number",
+        }
