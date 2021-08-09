@@ -18,6 +18,7 @@ def contact_us(request):
     return render(request, "contactus.html")
 
 def register(request):
+    
     if request.method == "POST":
         form = RegisterForm(request.POST)
         if form.is_valid():
@@ -27,5 +28,5 @@ def register(request):
         
         else:
             form = RegisterForm()
-            user_info = {"form": form}
+            user_info = {'form': form}
             return render(request, "register.html", user_info)
