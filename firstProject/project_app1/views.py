@@ -28,4 +28,4 @@ def register(request):
         else:
             form = RegisterForm()
             user_info = {"form": form}
-            return redirect(request, "register.html", user_info)
+            return render(request, "register.html", user_info)
