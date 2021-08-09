@@ -16,3 +16,9 @@ def services(request):
 
 def contact_us(request):
     return render(request, "contactus.html")
+
+def register(request):
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
