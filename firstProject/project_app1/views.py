@@ -34,4 +34,11 @@ def register(request):
         return render(request, "register.html", user_info)
 
 def signin(request):
-    return render(request, "signin.html")
+    global usrname
+    if request.method == "POST":
+        usrname = request.POST["username"]
+        passwd = request.POST["pswd"]
+
+        try:
+            user = RegisteredUser.objects.get(name=usrname)
+
