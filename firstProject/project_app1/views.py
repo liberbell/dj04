@@ -36,12 +36,12 @@ def register(request):
 def signin(request):
     global usrname
     if request.method == "POST":
-        usrname = request.POST["username"]
+        usrnme = request.POST["username"]
         passwd = request.POST["pswd"]
 
         try:
-            user = RegisteredUser.objects.get(name=usrname)
-            if usrname == user.name and passwd == user.password:
+            user = RegisteredUser.objects.get(name=usrnme)
+            if usrnme == user.name and passwd == user.password:
                 return redirect("loggedin")
             
             else:
