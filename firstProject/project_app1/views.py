@@ -47,5 +47,7 @@ def signin(request):
             else:
                 messages.info(request, "Incollect password.")
                 return redirect("signin")
+
         except ObjectDoesNotExist:
+            messages.info(request, "The user does not exist.")
 
