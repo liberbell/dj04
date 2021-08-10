@@ -50,4 +50,8 @@ def signin(request):
 
         except ObjectDoesNotExist:
             messages.info(request, "The user does not exist.")
+            return redirect("signin")
+
+    else:
+        return render(request, "signin.html")
 
