@@ -34,7 +34,7 @@ def register(request):
         return render(request, "register.html", user_info)
 
 def signin(request):
-    global usrname
+    global usrnme
     if request.method == "POST":
         usrnme = request.POST["username"]
         passwd = request.POST["pswd"]
