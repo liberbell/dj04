@@ -2,7 +2,7 @@
 
 <body>
     {% block content %}
-    <form action="signin" method="POST">
+    <form method="post" action="signin">
         {% csrf_token %}
         Username: <input type="text" name="username" />
         <br><br>
@@ -10,5 +10,5 @@
         <br><br>
         <button type="submit">Submit</button>
     </form>
-    {% endblock content %}
+    {% endblock %}
 </body>
