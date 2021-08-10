@@ -43,4 +43,9 @@ def signin(request):
             user = RegisteredUser.objects.get(name=usrname)
             if usrname == user.name and passwd == user.password:
                 return redirect("loggedin")
+            
+            else:
+                messages.info(request, "Incollect password.")
+                return redirect("signin")
+        except ObjectDoesNotExist:
 
