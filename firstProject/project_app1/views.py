@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib import messages
 from django.http import HttpResponse
+from .models import RegisteredUser
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 
