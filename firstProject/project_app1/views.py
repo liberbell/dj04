@@ -40,13 +40,14 @@ def signin(request):
         passwd = request.POST["pswd"]
 
         try:
-            user = RegisteredUser.objects.get(name=usrnme)
-            if usrnme == user.name and passwd == user.password:
-                return redirect("loggedin")
+            # user = RegisteredUser.objects.get(name=usrnme)
+            print(usrnme, passwd)
+            # if usrnme == user.name and passwd == user.password:
+            #     return redirect("loggedin")
             
-            else:
-                messages.info(request, "Incollect password.")
-                return redirect("signin")
+            # else:
+            #     messages.info(request, "Incollect password.")
+            #     return redirect("signin")
 
         except ObjectDoesNotExist:
             messages.info(request, "The user does not exist.")
