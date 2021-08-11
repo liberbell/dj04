@@ -40,8 +40,8 @@ def signin(request):
         passwd = request.POST["pswd"]
 
         try:
-            user = RegisteredUser.objects.get(name=usrnme)
-            print(usrnme, passwd)
+            user = RegisteredUser.objects.filter(name=usrnme)
+            print(user)
             # if usrnme == user.name and passwd == user.password:
             #     return redirect("loggedin")
             
