@@ -37,11 +37,11 @@ def signin(request):
     global usrnme
     if request.method == "POST":
         usrnme = request.POST["username"]
-        passwd = request.POST["pswd"]
+        psswrd = request.POST["pswd"]
 
         try:
             user = RegisteredUser.objects.filter(name=usrnme)
-            if usrnme == user.name and passwd == user.password:
+            if usrnme == user.name and psswrd == user.password:
                 return redirect("loggedin")
             
             else:
