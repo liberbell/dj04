@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 
 <body>
     {% block content %}
     You have been loggged out successfully. <br><br>
-    <a href="{% url "signin" %}">Sign in again</a>
+    <a href="{% url "singin" %}">Sign in again</a>
     {% endblock %}
 </body>
