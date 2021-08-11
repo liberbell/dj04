@@ -57,3 +57,6 @@ def signin(request):
     else:
         return render(request, "signin.html")
 
+def loggedin(request):
+    userdetails = {"username": usrnme}
+    return render(request, "loggedin.html", userdetails)
