@@ -30,7 +30,11 @@ def services(request):
         return render(request, "services.html")
 
 def contact_us(request):
-    return render(request, "contactus.html")
+    try:
+        if usrnme:
+            return render(request, "contactus.html")
+    except NameError:
+        return render(request, "contactus.html")
 
 def register(request):
 
