@@ -77,3 +77,8 @@ def signin(request):
 def loggedin(request):
     userdetails = {"username": usrnme}
     return render(request, "loggedin.html", userdetails)
+
+def logout(request):
+    global usrnme
+    del usrnme
+    return render(request, "logout.html")
