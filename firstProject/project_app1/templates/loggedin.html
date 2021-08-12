@@ -12,12 +12,10 @@
 <body>
     {% block content %}
     <form method="get" action="logout">
-        {% csrf_token %}
-        Username: <input type="text" name="username" />
-        <br><br>
-        Password: <input type="password" name="pswd" />
-        <br><br>
-        <button type="submit">Submit</button>
+        <button type="submit" style="float: right; width: 10%; height: 30px; font-size: 15px;">Log out</button>
     </form>
+    <h2>
+        <p style="text-align: center">Welcome {{ username }} !!</p>
+    </h2>
     {% endblock %}
 </body>
