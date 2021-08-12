@@ -8,7 +8,12 @@ from django.core.exceptions import ObjectDoesNotExist
 # Create your views here.
 
 def app_homepage(request):
-    return render(request, "homepage.html")
+    try:
+        if usrnme:
+            userdetails = {"username": usrnme}
+            return render(request, "loggedin.html", userdetails)
+    except NameError:
+        return render(request, "homepage.html")
 
 def about_us(request):
     return render(request, "aboutus.html")
