@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-{% load static %}
 
 <body>
     {% block content %}
-    You have been loggged out successfully. <br><br>
-    <a href="{% url 'singin' %}">Sign in again</a>
+    <form method="post" action="signin">
+        {% csrf_token %}
+    </form>
     {% endblock %}
 </body>
