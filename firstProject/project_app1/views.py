@@ -16,7 +16,12 @@ def app_homepage(request):
         return render(request, "homepage.html")
 
 def about_us(request):
-    return render(request, "aboutus.html")
+    try:
+        if usrnme:
+            userdetails = {"username": usrnme}
+            return render(request, "aboutus.html")
+    except NameError:
+        return render(request, "aboutus.html")
 
 def services(request):
     return render(request, "services.html")
