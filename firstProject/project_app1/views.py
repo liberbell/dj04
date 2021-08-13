@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.http import HttpResponse, request
 from .models import RegisteredUser
 from django.core.exceptions import ObjectDoesNotExist
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 # Create your views here.
 
@@ -89,3 +89,6 @@ class UserListView(ListView):
     model = RegisteredUser
     template_name = "user_data.html"
     context_object_name = "alldata"
+
+class UserDetailView(DetailView):
+    model = RegisteredUser
