@@ -1,7 +1,8 @@
+from django.db import models
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
 from django.contrib import messages
-from django.http import HttpResponse
+from django.http import HttpResponse, request
 from .models import RegisteredUser
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.generic import ListView
@@ -83,3 +84,8 @@ def logout(request):
     global usrnme
     del usrnme
     return render(request, "logout.html")
+
+class UserListView(ListView):
+    model = RegisteredUser
+    template_name = "user_data.html"
+    context_object_name = "alldata"
