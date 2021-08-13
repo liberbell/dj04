@@ -1,3 +1,4 @@
+from collections import namedtuple
 from re import template
 from . import views
 from django.urls import path, include
@@ -12,5 +13,6 @@ urlpatterns = [
     path("loggedin", views.loggedin, name="loggedin"),
     path("logout", views.logout, name="logout"),
     path("userlist", views.UserListView.as_view(), name="userlist"),
-    path("userdetail/<int:pk>/", views.UserDetailView.as_view(template_name="user_detail.html"), name="userdetail")
+    path("userdetail/<int:pk>/", views.UserDetailView.as_view(template_name="user_detail.html"), name="userdetail"),
+    path("usercreate", views.views.UserCreateView.as_view(template_name="user_create.html"), name="usercreate")
 ]
