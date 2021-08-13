@@ -2,7 +2,9 @@
 
 <body>
     {% block content %}
-        {% for user in alldata %}
-        {% endfor %}
+        Id: {{ object.id }}<br>
+        Username: {{ object.name }}<br>
+        Email Id: {{ object.emailid }}<br>
+        Phone Number: {{ object.phoneNum }}<br>
     {% endblock content %}
 </body>
