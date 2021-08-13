@@ -3,6 +3,9 @@
 <body>
     {% block content %}
         {% for user in alldata %}
+            Id: {{ user.id }}<br>
+            Username: {{ user.name }}<br>
+            Email Id: {{ user.emailid }}<br><br>
         {% endfor %}
     {% endblock content %}
 </body>
