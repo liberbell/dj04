@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.http import HttpResponse, request
 from .models import RegisteredUser
 from django.core.exceptions import ObjectDoesNotExist
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
 # Create your views here.
 
@@ -92,3 +92,7 @@ class UserListView(ListView):
 
 class UserDetailView(DetailView):
     model = RegisteredUser
+
+class UserCreateView(CreateView):
+    model = RegisteredUser
+    form_class = RegisterForm
