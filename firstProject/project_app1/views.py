@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from .models import RegisteredUser
 from django.core.exceptions import ObjectDoesNotExist
+from django.views.generic import ListView
 
 # Create your views here.
 
