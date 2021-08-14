@@ -96,3 +96,7 @@ class UserDetailView(DetailView):
 class UserCreateView(CreateView):
     model = RegisteredUser
     form_class = RegisterForm
+
+class UserUpdateView(UpdateView):
+    model = RegisteredUser
+    form_class = RegisterForm
