@@ -109,6 +109,6 @@ class UserUpdateView(UserPassesTestMixin, UpdateView):
         else:
             return False
 
-class UserDeleteView(DeleteView):
+class UserDeleteView(UserPassesTestMixin, DeleteView):
     model = RegisteredUser
     success_url = '/userlist'
