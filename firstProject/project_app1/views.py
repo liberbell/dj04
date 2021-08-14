@@ -112,3 +112,7 @@ class UserUpdateView(UserPassesTestMixin, UpdateView):
 class UserDeleteView(UserPassesTestMixin, DeleteView):
     model = RegisteredUser
     success_url = '/userlist'
+
+    def test_func(self):
+        if self.request.user.is_active:
+            print(self.request.user)
