@@ -111,3 +111,4 @@ class UserUpdateView(UserPassesTestMixin, UpdateView):
 
 class UserDeleteView(DeleteView):
     model = RegisteredUser
+    success_url = '/userlist'
