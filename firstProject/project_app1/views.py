@@ -1,3 +1,4 @@
+from django import contrib
 from django.db import models
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
@@ -6,6 +7,7 @@ from django.http import HttpResponse, request
 from .models import RegisteredUser
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 # Create your views here.
 
