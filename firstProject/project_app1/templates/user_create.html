@@ -4,8 +4,14 @@
     {% block content %}
         <form method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Submit data</button>
+            {% if request.user.is_superuser %}
+                {{ form.as_p }}
+                <button type="submit">Submit Data</button>
+            {% else %}
+                The logged in user is not a superuser.
+                Please log in as a super user in order
+                to add/modify user data.
+            {% endif %}
         </form>
     {% endblock content %}
 </body>
