@@ -99,6 +99,12 @@ class UserCreateView(CreateView):
     model = RegisteredUser
     form_class = RegisterForm
 
-class UserUpdateView(UpdateView):
+class UserUpdateView(UserPassesTestMixin, UpdateView):
     model = RegisteredUser
     form_class = RegisterForm
+
+    def test_func(self):
+        if self.request.user.is_active:
+            return True
+        else:
+            return False
