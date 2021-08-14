@@ -4,7 +4,7 @@
     {% block content %}
         <form method="POST">
             {% csrf_token %}
-            {% if request.user.is_superuser %}
+            {% if request.user.is_superuser or request.user.is_staff %}
                 {{ form.as_p }}
                 <button type="submit">Submit Data</button>
             {% else %}
