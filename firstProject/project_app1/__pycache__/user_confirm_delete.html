@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+<body>
+    {% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        Are you sure you want to delete the data of the user {{ object.name }}?
+        <br><br>
+        
+    </form>
+    {% endblock content %}
+</body>
