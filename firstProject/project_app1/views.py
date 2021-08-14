@@ -108,3 +108,6 @@ class UserUpdateView(UserPassesTestMixin, UpdateView):
             return True
         else:
             return False
+
+class UserDeleteView(DeleteView):
+    model = RegisteredUser
