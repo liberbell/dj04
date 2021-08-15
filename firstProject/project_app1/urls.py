@@ -19,3 +19,6 @@ urlpatterns = [
     path("userupdate/<int:pk>/", views.UserUpdateView.as_view(template_name="user_create.html"), name="userupdate"),
     path("userdelete/<int:pk>/", views.UserDeleteView.as_view(template_name="user_confirm_delete.html"), name="userdelete")
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_ROOT, document_root=settings.MEDIA_ROOT)
