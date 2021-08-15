@@ -4,10 +4,14 @@
     {% block content %}
         <form method="POST">
             {% csrf_token %}
-            Are you sure you want to delete the data of the user {{ object.name }}?
-            <br><br>
-            <button type="submit">Delete</button>&emsp;&emsp;
-            <a role="button" href="{% url 'userdetail' object.id %}">Cancel</a>
+            {% if request.user.is_superuser %}
+                Are you sure you want to delete the data of the user {{ object.name }}?
+                <br><br>
+                <button type="submit">Delete</button>&emsp;&emsp;
+                <a role="button" href="{% url 'userdetail' object.id %}">Cancel</a>
+            {% else %}
+                The logged in user is not a supersuser.
+                Please log in with a supersuser to delete the data.
         </form>
     {% endblock content %}
 </body>
