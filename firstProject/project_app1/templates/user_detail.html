@@ -2,6 +2,17 @@
 
 <body>
     {% block content %}
+        <table border="2">
+            <tr>
+                <td>Id:</td><td>{{ object.id }}</td>
+            </tr>
+            <tr>
+                <td>Username:</td><td>{{ object.name }}</td>
+            </tr>
+            <tr>
+                <td>Email Id:</td><td>{{ object.emailid }}</td>
+            </tr>
+        </table>
         Id: {{ object.id }}<br>
         Username: {{ object.name }}<br>
         Email Id: {{ object.emailid }}<br>
