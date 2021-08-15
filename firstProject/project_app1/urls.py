@@ -2,6 +2,7 @@ from collections import namedtuple
 from re import template
 from . import views
 from django.urls import path, include
+from django.conf import settings
 
 urlpatterns = [
     path("", views.app_homepage, name="app_homepage"),
