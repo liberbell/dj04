@@ -16,5 +16,13 @@
                 <td>Phone Number:</td><td>{{ object.phoneNum }}</td>
             </tr>
         </table>
+
+        {% if request.user.is_superuser %}
+            <br>
+            <a href="{% url 'userupdate' object.id %}">Update</a>
+            <a href="{% url 'userdelete' object.id %}">Delete</a>
+        {% else %}
+            <p>Log in as a supersuser to edit user info.</p>
+        {% endif %}
     {% endblock content %}
 </body>
