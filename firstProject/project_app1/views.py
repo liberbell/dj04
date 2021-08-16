@@ -1,4 +1,5 @@
 from django import contrib
+from django.core.files.base import equals_lf
 from django.db import models
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
@@ -85,6 +86,8 @@ def loggedin(request):
     pic_path = str(image_file.profilePic)
 
     full_pic_path = 'media/' + pic_path
+    userdetails = {'username': usrnme, 'image': full_pic_path}
+    return render(request, "loggedin.html", userdetails)
 
 def logout(request):
     global usrnme
