@@ -79,8 +79,12 @@ def signin(request):
         return render(request, "signin.html")
 
 def loggedin(request):
-    userdetails = {"username": usrnme}
-    return render(request, "loggedin.html", userdetails)
+    # userdetails = {"username": usrnme}
+    # return render(request, "loggedin.html", userdetails)
+    image_file = RegisteredUser.objects.get(name=usrnme)
+    pic_path = str(image_file.profilePic)
+
+    full_pic_path = 'media/' + pic_path
 
 def logout(request):
     global usrnme
