@@ -5,4 +5,4 @@ from django.shortcuts import render, redirect
 def product_list(reuqest):
     products = {"diary": ["milk", "yougurt", "cheese", "butter"],
                 "stones": ["rock", "stones", "leva", "molten rock"],
-                }
+                "tumbleweed": ["weed", "grass", "dead grass"]}
