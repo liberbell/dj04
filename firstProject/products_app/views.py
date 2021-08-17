@@ -9,4 +9,4 @@ def product_list(reuqest):
                 "tumbleweed": ["weed", "grass", "dead grass"],
                 "air": ["smog", "smoke", "atomosphere"]}
 
-    return render(request, "product_list.html", products)
+    return render(request, "products_list.html", products)
