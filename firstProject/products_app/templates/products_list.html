@@ -37,9 +37,16 @@
         </div>
         <div class="column">
             <h2>Tumbleweed</h2>
-            {% for stones_prod in stones %}
+            {% for tumbleweed_prod in tumbleweed %}
                 <input type="checkbox" id={{tumbleweed_prod}} name="products" value={{tumbleweed_prod}}>
                 <label for="{{tumbleweed_prod}}">{{tumbleweed_prod}}</label>
+            {% endfor %}
+        </div>
+        <div class="column">
+            <h2>Air</h2>
+            {% for air_prod in air %}
+                <input type="checkbox" id={{air_prod}} name="products" value={{air_prod}}>
+                <label for="{{air_prod}}">{{air_prod}}</label>
             {% endfor %}
         </div>
     </div>
