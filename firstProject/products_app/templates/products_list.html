@@ -24,12 +24,15 @@
         <div class="column">
             <h2>Dairy</h2>
             {% for dairy_prod in dairy %}
-                <input type="checkbox" id={{dairy_prod}} name="products" value="{{dairy_prod}}">
+                <input type="checkbox" id={{dairy_prod}} name="products" value={{dairy_prod}}>
                 <label for="{{dairy_prod}}">{{dairy_prod}}</label><br>
             {% endfor %}
         </div>
         <div class="column">
-            <h2></h2>
+            <h2>Stones</h2>
+            {% for stones_prod in stones %}
+                <input type="checkbox" id={{stones_prod}} name="products" value={{stones_prod}}>
+            {% endfor %}
         </div>
     </div>
     {% endblock %}
