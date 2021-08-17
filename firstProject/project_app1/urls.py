@@ -19,7 +19,8 @@ urlpatterns = [
     path("userdetail/<int:pk>/", views.UserDetailView.as_view(template_name="user_detail.html"), name="userdetail"),
     path("usercreate", views.UserCreateView.as_view(template_name="user_create.html"), name="usercreate"),
     path("userupdate/<int:pk>/", views.UserUpdateView.as_view(template_name="user_create.html"), name="userupdate"),
-    path("userdelete/<int:pk>/", views.UserDeleteView.as_view(template_name="user_confirm_delete.html"), name="userdelete")
+    path("userdelete/<int:pk>/", views.UserDeleteView.as_view(template_name="user_confirm_delete.html"), name="userdelete"),
+    path("products", prod_views.product_list, name="products_list"),
 ]
 
 if settings.DEBUG:
