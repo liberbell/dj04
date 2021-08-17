@@ -32,6 +32,7 @@
             <h2>Stones</h2>
             {% for stones_prod in stones %}
                 <input type="checkbox" id={{stones_prod}} name="products" value={{stones_prod}}>
+                <label for="{{stones_prod}}">{{stones_prod}}</label>
             {% endfor %}
         </div>
     </div>
