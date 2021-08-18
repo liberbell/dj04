@@ -24,3 +24,6 @@ def order(request):
         order_data.save()
         messages.success(request, "Order created successfully. " + prod_str)
         return redirect("loggedin")
+
+    else:
+        return render(request, "products_list.html")
