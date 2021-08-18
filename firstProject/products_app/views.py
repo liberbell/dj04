@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import OrderList
 from django.contrib import messages
+from groceries_app import views as groceries
 
 
 
