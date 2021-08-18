@@ -22,3 +22,5 @@ def order(request):
         prod_str = ",".join(prod_list)
         order_data = OrderList(wholelist=prod_str, username=groceries.usrnme)
         order_data.save()
+        messages.success(request, "Order created successfully. " + prod_str)
+        return redirect("loggedin")
