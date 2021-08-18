@@ -19,3 +19,5 @@ def product_list(request):
 def order(request):
     if request.method == "POST":
         prod_list = request.POST.getlist("products")
+        prod_str = ",".join(prod_list)
+        order_data = OrderList(wholelist = prod_str, username= groceries.usrnme)
