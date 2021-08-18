@@ -5,6 +5,7 @@ from groceries_app import views as groceries
 
 
 
+
 def product_list(request):
     products = {
                 "dairy": ["milk", "yougurt", "cheese", "butter"],
@@ -14,3 +15,7 @@ def product_list(request):
                 }
 
     return render(request, "products_list.html", products)
+
+def order(request):
+    if request.method == "POST":
+        prod_list = request.POST.getlist("products")
