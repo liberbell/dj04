@@ -1,6 +1,6 @@
 from collections import namedtuple
 # from firstProject.products_app.views import order
-from firstProject.products_app.views import order
+# from firstProject.products_app.views import order
 from re import template
 from . import views
 from django.urls import path, include
@@ -23,7 +23,7 @@ urlpatterns = [
     path("userupdate/<int:pk>/", views.UserUpdateView.as_view(template_name="user_create.html"), name="userupdate"),
     path("userdelete/<int:pk>/", views.UserDeleteView.as_view(template_name="user_confirm_delete.html"), name="userdelete"),
     path("products/", prod_views.product_list, name="products_list"),
-    path("order", prod_views.order, name="order"),
+    path("order/", prod_views.order, name="order"),
 ]
 
 if settings.DEBUG:
