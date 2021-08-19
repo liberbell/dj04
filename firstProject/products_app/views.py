@@ -3,9 +3,6 @@ from .models import OrderList
 from django.contrib import messages
 from project_app1 import views as projectapp1
 
-
-
-
 def product_list(request):
     products = {
                 "dairy": ["milk", "yougurt", "cheese", "butter"],
