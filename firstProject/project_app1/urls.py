@@ -1,7 +1,3 @@
-from collections import namedtuple
-# from firstProject.products_app.views import order
-# from firstProject.products_app.views import order
-from re import template
 from . import views
 from django.urls import path, include
 from django.conf import settings
