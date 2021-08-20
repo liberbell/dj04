@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .models import OrderList
 from django.contrib import messages
 from project_app1 import views as projectapp1
+from project_app1 import models as projectmodel
+from django.core.mail import send_mail
+
 
 def product_list(request):
     products = {
