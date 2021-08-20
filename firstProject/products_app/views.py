@@ -24,6 +24,10 @@ def order(request):
         order_data.save()
         user_data = projectmodel.RegisteredUser.objects.get(name=projectapp1.usrnme)
         receipientlist = [user_data.emailid, ]
+        send_mail(
+            "Order from Eric Basket",
+            "Hi, \n \n Below are the products that you have ordered from Eric Basket.\n\n {}"
+        )
         messages.success(request, "Order created successfully. " + prod_str)
         return redirect("loggedin")
 
