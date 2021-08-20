@@ -22,6 +22,8 @@ def order(request):
         prod_str = ",".join(prod_list)
         order_data = OrderList(wholelist=prod_str, username=projectapp1.usrnme)
         order_data.save()
+        user_data = projectmodel.RegisteredUser.objects.get(name=projectapp1.usrnme)
+        receipientlist = [user_data.emailid, ]
         messages.success(request, "Order created successfully. " + prod_str)
         return redirect("loggedin")
 
