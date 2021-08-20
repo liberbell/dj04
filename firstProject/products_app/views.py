@@ -1,3 +1,4 @@
+from firstProject.firstProject.settings import EMAIL_HOST_USER
 from django.shortcuts import render, redirect
 from .models import OrderList
 from django.contrib import messages
@@ -26,7 +27,9 @@ def order(request):
         receipientlist = [user_data.emailid, ]
         send_mail(
             "Order from Eric Basket",
-            "Hi, \n \n Below are the products that you have ordered from Eric Basket.\n\n {}"
+            "Hi, \n \n Below are the products that you have ordered from Eric Basket.\n\n {}".format(prod_str),
+            settings.EMAIL_HOST_USER,
+            receipientlist
         )
         messages.success(request, "Order created successfully. " + prod_str)
         return redirect("loggedin")
