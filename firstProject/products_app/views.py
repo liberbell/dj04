@@ -33,7 +33,7 @@ def order(request):
         )
         messages.success(request, "Order created successfully. and a mail with the list of "
                                   "products has been sent to your registered email address")
-        return redirect(request, "ordersuccess")
+        return redirect(request, "ordersuccess.html")
 
     else:
         return render(request, "products_list.html")
