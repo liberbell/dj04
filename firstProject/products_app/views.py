@@ -4,7 +4,7 @@ from django.contrib import messages
 from project_app1 import views as projectapp1
 from project_app1 import models as projectmodel
 from django.core.mail import send_mail
-
+from django.conf import settings
 
 def product_list(request):
     products = {
