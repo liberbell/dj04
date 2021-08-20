@@ -31,8 +31,9 @@ def order(request):
             settings.EMAIL_HOST_USER,
             receipientlist
         )
-        messages.success(request, "Order created successfully. " + prod_str)
-        return redirect("loggedin")
+        messages.success(request, "Order created successfully. and a mail with the list of "
+                                  "products has been sent to your registered email address")
+        return redirect(request, "ordersuccess")
 
     else:
         return render(request, "products_list.html")
